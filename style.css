@@ -6,7 +6,6 @@ body {
   animation: bgChange 20s infinite;
   animation-direction: alternate;
   -webkit-animation: bgChange 20s infinite; ​
-  -webkit-animation-delay: 0s;
 }
 
 #ground {
@@ -21,17 +20,18 @@ body {
   z-index: 4;
 }
 
-span {
-  display: none;
+#footprint-left, #footprint-right {
+  position: relative;
+  z-index: 6;
+  zoom: 30%;
+  align-items: center;
+  top: 10px;
+  padding-right: 30px;
 }
 
-#ground:hover span {
-  display: block;
-}
-
-h1 {
+.quote {
   margin: 0;
-  padding-top: 190px;
+  padding-top: 160px;
   padding-right: 30px;
   text-align: center;
   color: lightgray;
@@ -39,9 +39,41 @@ h1 {
   font-family: sans-serif;
 }
 
-h1:hover{
+#text1 {
 
 }
+
+#text2 {
+  display: none;
+}
+
+#ground:hover span {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footprint-left, #footprint-right {
+  display: none;
+}
+
+#footprint-left {
+  transform: rotate(350deg);
+}
+
+#ground:hover #footprint-left {
+  display: inline-block;
+}
+
+#footprint-right {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1) rotate(350deg);
+}
+
+#ground:hover #footprint-right {
+  display: inline-block;
+}
+
 
 @keyframes bgChange {
   0% { background:black; }
@@ -99,7 +131,7 @@ h1:hover{
   -moz-border-radius: 50%;
   -webkit-animation: moonRising 20s infinite;
   background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, white 0%, darkgray 100%, gray 95%);
-	background-image: -webkit-radial-gradient(45px 45px, circle cover, white, darkgray);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, white, rgb(47, 47, 47));
 	background-image: radial-gradient(45px 45px 45deg, circle cover, white 0%, darkgray 100%, gray 95%);
   -webkit-animation-delay: 10s; /* Safari 4.0 - 8.0 */
   animation-delay: 10s;
@@ -301,11 +333,11 @@ h1:hover{
 
 
 
-.timing-1 {
+.timing-1, .timing-2, .timing-3, .timing-4, .timing-5, .timing-6 {
    -webkit-animation: flickerAnimation1 20s infinite;
     animation-delay: 15s;
 }
-.timing-2 {
+/*.timing-2 {
    -webkit-animation: flickerAnimation2 20s infinite;
     animation-delay: 15s;
 }
@@ -324,4 +356,4 @@ h1:hover{
 .timing-6 {
    -webkit-animation: flickerAnimation6 20s infinite;
     animation-delay: 15s;
-}
+}*/
